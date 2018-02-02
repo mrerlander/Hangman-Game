@@ -69,7 +69,6 @@ document.onkeyup = function (event) {
             //adds user guess to list on screen if new guess
             document.getElementById("user-guesses").textContent += userGuess + " ";
             userGuesses.push(userGuess);
-                console.log(userGuesses);
             
             //guesses that are correct and guesses less than unique letter length
             if (uniq.includes(userGuess) && correctGuesses.length < uniq.length) {
