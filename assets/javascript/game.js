@@ -68,11 +68,12 @@ document.onkeyup = function (event) {
             
             //adds user guess to list on screen if new guess
             document.getElementById("user-guesses").textContent += userGuess + " ";
+            userGuesses.push(userGuess);
+                console.log(userGuesses);
             
             //guesses that are correct and guesses less than unique letter length
             if (uniq.includes(userGuess) && correctGuesses.length < uniq.length) {
                 correctGuesses.push(userGuess);
-                userGuesses.push(userGuess);
                 for (var i = 0; i < letterReplace.length; i++) {
                     letterReplace[i].textContent = userGuess + " ";
                 }
@@ -91,7 +92,6 @@ document.onkeyup = function (event) {
             else if (!uniq.includes(userGuess) && attempts < 5) {
                 attempts++
                 document.getElementById("hangman-img").src = "assets/images/hangman-" + attempts + ".jpg";
-
             }
 
             //loss
